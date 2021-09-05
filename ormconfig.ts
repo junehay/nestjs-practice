@@ -8,7 +8,7 @@ export const ormOption = (nodeEnv?: string): TypeOrmModuleOptions => {
     username: 'root',
     password: '@second11',
     database: 'test_db',
-    entities: ['dist/entities/*.entity{.ts,.js}'],
+    entities: ['dist/src/entities/*.entity.js'],
     synchronize: nodeEnv === 'local' ? true : false,
     logging: nodeEnv === 'local' ? true : false
   };
