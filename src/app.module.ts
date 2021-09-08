@@ -7,6 +7,7 @@ import { ormOption } from '../ormconfig';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CatsModule } from './cats/cats.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -19,7 +20,8 @@ import { CatsModule } from './cats/cats.module';
       useFactory: (configService: ConfigService) => ormOption(configService.get('NODE_ENV')),
       inject: [ConfigService]
     }),
-    CatsModule
+    CatsModule,
+    UsersModule
   ],
   controllers: [AppController],
   providers: [AppService]
